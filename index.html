@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurt Hamm | Founder & Principal Solutions Architect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #22a6a4;
+            --dark-bg: #1a1a1a;
+            --light-bg: #f8f9fa;
+            --text-dark: #333;
+            --text-light: #666;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header .tagline {
+            font-size: 1.3em;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        header .subtitle {
+            font-size: 1.1em;
+            color: #ccc;
+            max-width: 800px;
+            margin: 20px auto;
+            line-height: 1.8;
+        }
+
+        header .contact-info {
+            margin-top: 30px;
+            font-size: 0.95em;
+        }
+
+        header .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        header .contact-info a:hover {
+            color: #1a8d8b;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 0;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--light-bg);
+        }
+
+        section h2 {
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            color: var(--dark-bg);
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.05em;
+            color: var(--text-light);
+            line-height: 1.9;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+        }
+
+        /* Aetheria Systems Callout */
+        .aetheria-callout {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1a8d8b 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 40px auto;
+            max-width: 900px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .aetheria-callout h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .aetheria-callout p {
+            font-size: 1.05em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .aetheria-callout .btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .aetheria-callout .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Core Strengths */
+        .strengths-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .strength-item {
+            background: white;
+            padding: 25px;
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .strength-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .strength-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .strength-item p {
+            color: var(--text-light);
+            font-size: 0.95em;
+        }
+
+        /* Experience Timeline */
+        .experience-timeline {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            padding: 30px;
+            background: white;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--primary-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+        }
+
+        .timeline-item.current {
+            border-left-width: 8px;
+            background: linear-gradient(to right, #f0fffe 0%, white 100%);
+        }
+
+        .timeline-item h3 {
+            color: var(--dark-bg);
+            font-size: 1.4em;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item .company {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item .period {
+            color: var(--text-light);
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .timeline-item ul {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .timeline-item li {
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        /* Education */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .education-item {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .education-item h3 {
+            color: var(--primary-color);
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .education-item h4 {
+            color: var(--dark-bg);
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .education-item .year {
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        footer p {
+            margin-bottom: 15px;
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            header .tagline {
+                font-size: 1.1em;
+            }
+
+            section h2 {
+                font-size: 1.8em;
+            }
+
+            .strengths-grid,
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Kurt Hamm</h1>
+            <p class="tagline">Founder & Principal Solutions Architect at Aetheria Systems</p>
+            <p class="subtitle">Amazon Connect | Salesforce SCV | AI | Independent CX Consultant</p>
+            <div class="contact-info">
+                <a href="tel:4046091991">404.609.1991</a> |
+                <a href="mailto:me@kurthamm.me">me@kurthamm.me</a> |
+                <a href="https://linkedin.com/in/kurthamm/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2>About</h2>
+            <div class="about-content">
+                <p>I help organizations repair and elevate customer experience platforms that never reached their full potential. My focus is the space between systems where information flow breaks down and where customers and agents feel the friction. I work at the intersection of Amazon Connect, Salesforce Service Cloud Voice, and modern AI so enterprises can finally deliver the experience they believed they were building in the first place.</p>
+
+                <p>After years leading technology teams and designing contact center ecosystems, I have developed a specialty in diagnosing flawed implementations and turning them into stable, intelligent, and insight-driven environments. Instead of forcing clients into full replacements, I take the platforms they already own and connect them to the right data, events, and AI-driven logic. The result is cleaner routing, lower handling time, and an agent experience that finally matches the promise of the tools.</p>
+
+                <p>I partner with executives, architects, and operations leaders to clarify what success should look like and then build the architecture and workflows that make it real. I run discovery sessions, map data paths across platforms, design event-driven interactions, and align contact center decisions with measurable outcomes. I also help teams adopt AI safely and effectively by introducing translation, summarization, intent inference, and knowledge workflows that fit their environment rather than overwhelm it.</p>
+
+                <p>Through Aetheria Systems I work with clients who want a senior partner who can diagnose issues rapidly, communicate clearly, and deliver practical, grounded solutions. If you are responsible for a customer experience platform that is underperforming and you want to stabilize, modernize, or extend it with AI, I am open for new client engagements.</p>
+            </div>
+
+            <div class="aetheria-callout">
+                <h3>Aetheria Systems</h3>
+                <p><em>"We work in the space between systems"</em></p>
+                <p>Aetheria Systems designs, automates, and supports connections between cloud platforms, on-premises software, and legacy infrastructure. We enable organizations to operate as coordinated unified systems rather than disconnected silos.</p>
+                <a href="https://aetheria.systems" target="_blank" class="btn">Visit Aetheria.Systems →</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="strengths">
+        <div class="container">
+            <h2>Core Strengths</h2>
+            <div class="strengths-grid">
+                <div class="strength-item">
+                    <h4>Amazon Connect Ecosystem</h4>
+                    <p>Deep expertise in Amazon Connect including Lex, Lambda, EventBridge, Kinesis, and DynamoDB for building scalable contact center solutions.</p>
+                </div>
+                <div class="strength-item">
+                    <h4>Salesforce Service Cloud Voice</h4>
+                    <p>Expert integration of Salesforce CRM with Service Cloud Voice, CTI configuration, and digital service processes.</p>
+                </div>
+                <div class="strength-item">
+                    <h4>AI & GenAI Workflows</h4>
+                    <p>Implementation of AI-driven interaction flows including real-time translation, summarization, intent inference, and knowledge delivery.</p>
+                </div>
+                <div class="strength-item">
+                    <h4>KPI Design & Analytics</h4>
+                    <p>Strategic analytics design using QuickSight, CRM reporting, and data-driven insights to measure and improve customer experience.</p>
+                </div>
+                <div class="strength-item">
+                    <h4>Complex Integration Architecture</h4>
+                    <p>Cross-platform integration expertise across CRMs, case systems, legacy ACDs, and diverse data sources in hybrid environments.</p>
+                </div>
+                <div class="strength-item">
+                    <h4>Program Leadership & Remediation</h4>
+                    <p>Executive stakeholder facilitation, corrective action planning, and leadership for troubled CX programs requiring rapid diagnosis and recovery.</p>
+                </div>
+                <div class="strength-item">
+                    <h4>Regulatory Compliance</h4>
+                    <p>Deep understanding of PCI, HIPAA, and state/federal compliance requirements in contact center and data handling environments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            <div class="experience-timeline">
+                <div class="timeline-item current">
+                    <h3>Founder & Principal Solutions Architect</h3>
+                    <div class="company">Aetheria Systems</div>
+                    <div class="period">2024 – Present | New York</div>
+                    <p>Founded independent consulting firm focused on integration architecture and automation engineering for customer experience platforms. Specializing in diagnosing and repairing underperforming Amazon Connect and Salesforce Service Cloud Voice implementations.</p>
+                    <ul>
+                        <li>Design and implement cross-platform integrations spanning cloud, on-premises, and legacy systems</li>
+                        <li>Develop AI-powered automation workflows for contact center operations</li>
+                        <li>Lead corrective action planning for troubled CX programs</li>
+                        <li>Architect event-driven interactions connecting Amazon Connect, Salesforce, and enterprise data sources</li>
+                        <li>Implement GenAI solutions for translation, summarization, and knowledge delivery</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Senior Principal</h3>
+                    <div class="company">VoiceFoundry</div>
+                    <div class="period">June 2022 – 2024</div>
+                    <p>Led enterprise contact center transformations and Amazon Connect implementations for Fortune 500 clients.</p>
+                    <ul>
+                        <li>Developed multi-modal Voice Bot using GenAI and NLP technologies</li>
+                        <li>Architected complex integrations between Amazon Connect and enterprise CRM platforms</li>
+                        <li>Designed event-driven workflows using AWS services (Lambda, EventBridge, Kinesis)</li>
+                        <li>Led discovery sessions and stakeholder alignment for large-scale CX programs</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Specialist Leader</h3>
+                    <div class="company">Deloitte Consulting L.L.P</div>
+                    <div class="period">September 2021 – June 2022</div>
+                    <p>Provided strategic consulting on technology strategy and contact center solutions for enterprise clients.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Chief Administrative Officer</h3>
+                    <div class="company">SC Department of Employment and Workforce</div>
+                    <div class="period">May 2020 – September 2021</div>
+                    <p>Led pandemic-era digital transformation and contact center modernization for state agency.</p>
+                    <ul>
+                        <li>Modernized contact center infrastructure using Nice inContact platform</li>
+                        <li>Managed crisis response during unprecedented call volume surge</li>
+                        <li>Implemented workforce management systems and digital transformation initiatives</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Senior Cloud Consultant</h3>
+                    <div class="company">NTT Data, Inc</div>
+                    <div class="period">March 2019 – May 2020</div>
+                    <p>Delivered cloud infrastructure and integration solutions for enterprise clients.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Earlier Career</h3>
+                    <div class="company">Concentrix, SC Department of Revenue, Time Warner Cable</div>
+                    <div class="period">1996 – 2019</div>
+                    <p>Progressive leadership roles in technology strategy, information security, and operational management including:</p>
+                    <ul>
+                        <li>Led data breach response and implementation of Fast Enterprises' GenTax system</li>
+                        <li>Managed telecommunications infrastructure consolidation projects</li>
+                        <li>Directed IT operations and security initiatives for state government agencies</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Intelligence Analyst</h3>
+                    <div class="company">US Army National Guard</div>
+                    <div class="period">1985 – 1995</div>
+                    <p>Military service focusing on intelligence analysis and operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-grid">
+                <div class="education-item">
+                    <h3>MBA</h3>
+                    <h4>University of Louisiana, Shreveport</h4>
+                    <p>Project Management Concentration</p>
+                    <p class="year">2021</p>
+                </div>
+                <div class="education-item">
+                    <h3>B.S. Business Administration</h3>
+                    <h4>University of South Carolina</h4>
+                    <p>Finance</p>
+                    <p class="year">1996</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p><strong>Kurt Hamm</strong> | Founder & Principal Solutions Architect</p>
+            <p>
+                <a href="tel:4046091991">404.609.1991</a> |
+                <a href="mailto:me@kurthamm.me">me@kurthamm.me</a> |
+                <a href="mailto:hello@aetheria.systems">hello@aetheria.systems</a>
+            </p>
+            <p>
+                <a href="https://linkedin.com/in/kurthamm/" target="_blank">LinkedIn</a> |
+                <a href="https://aetheria.systems" target="_blank">Aetheria.Systems</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 0.9em; color: #999;">&copy; 2024 Kurt Hamm. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
